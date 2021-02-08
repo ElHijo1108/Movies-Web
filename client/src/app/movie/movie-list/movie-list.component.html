@@ -1,0 +1,34 @@
+<div class="col-md-4" *ngFor="let n of Movies">
+    <div class="card text-center" style="width: 18rem;">
+        <img src="{{n.image}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{n.title}}</h5>
+  
+          <div  *ngFor="let k of votos">
+            <form *ngIf="k.id==n.id" >
+              <p class="clasificacion">
+                <input [(ngModel)]="k.estrella5" id="rradio1" type="radio" name="eestrella5" value="5" disabled><!--
+                --><label for="rradio1">★</label><!--
+                --><input [(ngModel)]="k.estrella4" id="rradio2" type="radio" name="eestrella4" value="4" disabled><!--
+                --><label for="rradio2">★</label><!--
+                --><input [(ngModel)]="k.estrella3"id="rradio3" type="radio" name="eestrella3" value="3" disabled><!--
+                --><label for="rradio3">★</label><!--
+                --><input [(ngModel)]="k.estrella2"id="rradio4" type="radio" name="eestrella2" value="2" disabled><!--
+                --><label for="rradio4">★</label><!--
+                --><input [(ngModel)]="k.estrella1"id="rradio5" type="radio" name="eestrella1" value="1" disabled><!--
+                --><label for="rradio5">★</label>
+              </p>
+            </form>
+          </div>
+
+
+
+
+
+          <a *ngIf="userLogged" href="/movie/vote/{{n.id}}" class="btn btn-primary colorButton">Vote</a>
+          <h1>  </h1>
+          <a  href="/movie/details/{{n.id}}" class="btn btn-primary colorgree">Details</a>
+        </div>
+      </div>
+     
+</div>

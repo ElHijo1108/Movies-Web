@@ -1,0 +1,59 @@
+
+  <div class="card col-8 offset-md-2">
+    <div class="card-header">
+      {{Movie.title}}
+    </div>
+    <div class="card-body">
+      <table>
+        <tr>
+          <td style="width: 18rem;"><img src="{{Movie.image}}" class="card-img-top"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          
+          <td>
+            <h5 class="card-title">Score: {{Movie.score}}</h5>
+          <p class="card-text">{{Movie.description}}</p>
+          <h6>
+            This movie has been voted by {{count}} people</h6>
+        </td>
+        <td>
+          <form >
+            <p class="clasificacion">
+              <input [(ngModel)]="voto.estrella5" id="rradio1" type="radio" name="eestrella5" value="5" disabled><!--
+              --><label  for="rradio1">★</label><!--
+              --><input [(ngModel)]="voto.estrella4" id="rradio2" type="radio" name="eestrella4" value="4" disabled><!--
+              --><label for="rradio2">★</label><!--
+              --><input [(ngModel)]="voto.estrella3"id="rradio3" type="radio" name="eestrella3" value="3" disabled><!--
+              --><label for="rradio3">★</label><!--
+              --><input [(ngModel)]="voto.estrella2"id="rradio4" type="radio" name="eestrella2" value="2" disabled><!--
+              --><label for="rradio4">★</label><!--
+              --><input [(ngModel)]="voto.estrella1"id="rradio5" type="radio" name="eestrella1" value="1" disabled><!--
+              --><label for="rradio5">★</label>
+            </p>
+          </form>
+        </td>
+        <br>
+        <td>
+          
+        </td>
+        </tr>
+      </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Commentary</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let c of comentarios">
+          <tr>
+            <td>{{c.name}}</td>
+            <td>{{c.commentary}}</td>
+            <td>{{c.score}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

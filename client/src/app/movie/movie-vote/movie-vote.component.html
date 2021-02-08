@@ -1,0 +1,45 @@
+<div class="offset-md-4">
+  <div class="card text-center center" style="width: 18rem;">
+    <img src="{{Movie.image}}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{Movie.title}}</h5>
+      <p class="card-text">Score: {{Movie.score}}</p>
+      <form>
+        <p class="clasificacion">
+          <input ngModel="{{estrella5}}" (click)="ActualizarEstrellas(5)" id="radio1" type="radio" name="estrellas"
+            value="5">
+          <!--
+              --><label for="radio1">★</label>
+          <!--
+              --><input ngModel="{{estrella4}}" (click)="ActualizarEstrellas(4)" id="radio2" type="radio"
+            name="estrella" value="4">
+          <!--
+              --><label for="radio2">★</label>
+          <!--
+              --><input ngModel="{{estrella3}}" (click)="ActualizarEstrellas(3)" id="radio3" type="radio"
+            name="estrella" value="3">
+          <!--
+              --><label for="radio3">★</label>
+          <!--
+              --><input ngModel="{{estrella2}}" (click)="ActualizarEstrellas(2)" id="radio4" type="radio"
+            name="estrella" value="2">
+          <!--
+              --><label for="radio4">★</label>
+          <!--
+              --><input ngModel="{{estrella1}}" (click)="ActualizarEstrellas(1)" id="radio5" type="radio"
+            name="estrella" value="1">
+          <!--
+              --><label for="radio5">★</label>
+        </p>
+      </form>
+      <div class="form-group">
+        <textarea name="description" [(ngModel)]="text" placeholder="Description" rows=2
+          class="form-control"></textarea>
+      </div>
+
+      <br>
+      <a (click)="vote()" class="btn btn-primary">Vote</a>
+    </div>
+
+  </div>
+</div>
